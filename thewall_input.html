@@ -1,0 +1,19 @@
+<!-- форма ввода нового сообщения  -->
+Current user: <b>%s</b>
+<style>
+.msg-btn { width: 4em }
+</style>
+<form name="msginput" method="post">
+  <p name='inplabel' id='input'>
+    <div id='inplabeltext'>Message</div> <!-- метка для редактора -->
+    <table><tr><td>
+      <textarea name="msgtext" cols=80 rows=7 placeholder="Input your message" maxlength=1024 required></textarea>
+      <input type='hidden' name='msgpid'> <!--  скрытый параметр для формы ввода, ParentID в дереве -->
+      <input type='hidden' name='msgid' value='%s'> <!-- скрытый параметр для JavaScript, имя якоря нового сообщения -->
+    </td><td valign=top>
+      <input type="submit" value="Send"  class="msg-btn" title="Send message"><br>
+      <input type="reset"  value="Clear" class="msg-btn" title="Clear message"><br>
+      <input type="button" value="New"   class="msg-btn" title="Make new message" onClick="goNewMsg()">
+    </td></tr></table>
+  </p>
+</form>

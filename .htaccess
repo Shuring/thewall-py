@@ -1,0 +1,3 @@
+Options +ExecCGI
+
+Redirect /index.html /auth.py

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<HTML>
+  <HEAD>
+    <META HTTP-EQUIV="Content-Language" CONTENT="ru">
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf8">
+    <META NAME=Generator CONTENT="FAR 3.0">
+    <META NAME=Author CONTENT="Александр Малыгин">
+    <META NAME=Description CONTENT="Тестовое задание на вакансию веб-разработчик. Страница стены сообщений">
+   <TITLE>The Wall of Messages</TITLE>
+   <STYLE TYPE="text/css">
+     body {text-align: justify; font-style: normal; font-family: Arial, Verdana, Helvetica, sans-serif; font-size: 12pt;
+           background-color: white; }
+     /* специальные маркеры для списка, вместо стандартных */ 
+     li { list-style: none; }
+     li::before { padding-right: 1em; }
+     li.msg0::before { content: '\25ba'; }
+     li.msg1::before { content: '\25bc'; }
+     li.cmnt::before { content: '\25a4'; }
+   </STYLE>
+</HEAD>
+
+<script type="text/javascript">
+  // переход к форме ввода по кнопке Comment
+  function goAnswer(id, hint) {
+    document.getElementById("inplabeltext").innerHTML="Comment to: "+hint;
+    document.msginput.msgpid.value=id; // id сообщения, на которое отвечаем
+    document.msginput.msgtext.focus(); // фокус на редактор
+    scroll(0,0);
+  }
+
+  function goNewMsg() {
+    document.getElementById("inplabeltext").innerHTML="Message";
+    document.msginput.msgpid.value="";
+  }
+  // обеспечение перехода к новому сообщению после его добавления
+  document.addEventListener("DOMContentLoaded", function() {
+    var mid=document.msginput.msgid.value; // здесь серверный код положил имя якоря
+    if (mid) document.location.hash = mid; // переход к сообщению
+  } )
+
+</script>
+
+<BODY>
+
+<table width=100% border=0><tr bgcolor="Black">
+  <td align=center><font color="White" size="12" weight="bold" face="Times New Roman">THE WALL</font></td>
+</tr></table>
