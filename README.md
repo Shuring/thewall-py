@@ -27,7 +27,6 @@ The Wall of Messages - test job from Light IT, Python edition
 * thewall_ro.html     - сообщение о режиме read-only
 * auth.py             - страница авторизации
 * fbauth.py           - класс авторизации на Фейсбук
-* index.py            - главная страница (редирект на авторизацию)
 * show.py             - страница отображения и ввода сообщений
 * thewall.py          - ядро системы: класс с функциями работы с БД
 * thewall-full-struct.sql - скрипт для создания чистой БД с нуля в MySQL
