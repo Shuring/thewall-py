@@ -9,56 +9,55 @@ The Wall of Messages - test job from Light IT, Python edition
 Использованные технологии; HTML,CSS,JavaScript,Python,MySQL
 
 Приложение испытывалось в следующих браузерах:
-Internet Explorer 11
-Яндекс.Браузер 17.7.1.804
-Opera 47.0.2631.80
+* Internet Explorer 11
+* Яндекс.Браузер 17.7.1.804
+* Opera 47.0.2631.80
 
 Серверная часть работала на машине разработчика под WampServer Version 3.1.0 64bit:
-Apache 2.4.27 - PHP 5.6.31
-MySQL 5.7.19
-Python 3.6.2 (в режиме CGI)
+* Apache 2.4.27 - PHP 5.6.31
+* MySQL 5.7.19
+* Python 3.6.2 (в режиме CGI)
 
 Список файлов;
-.htaccess           - здесь настройка, чтобы апач включил CGI, а также редирект по дефолту на авторизацию
-thewall_auth.html   - интерфейс страницы авторизации
-thewall_footer.html - конец страницы стены
-thewall_header.html - начало страницы стены
-thewall_input.html  - форма ввода в стене
-thewall_ro.html     - сообщение о режиме read-only
-auth.py             - страница авторизации
-fbauth.py           - класс авторизации на Фейсбук
-index.py            - главная страница (редирект на авторизацию)
-show.py             - страница отображения и ввода сообщений
-thewall.py          - ядро системы: класс с функциями работы с БД
-thewall-full-struct.sql - скрипт для создания чистой БД с нуля в MySQL
+* .htaccess           - здесь настройка, чтобы апач включил CGI, а также редирект по дефолту на авторизацию
+* thewall_auth.html   - интерфейс страницы авторизации
+* thewall_footer.html - конец страницы стены
+* thewall_header.html - начало страницы стены
+* thewall_input.html  - форма ввода в стене
+* thewall_ro.html     - сообщение о режиме read-only
+* auth.py             - страница авторизации
+* fbauth.py           - класс авторизации на Фейсбук
+* index.py            - главная страница (редирект на авторизацию)
+* show.py             - страница отображения и ввода сообщений
+* thewall.py          - ядро системы: класс с функциями работы с БД
+* thewall-full-struct.sql - скрипт для создания чистой БД с нуля в MySQL
 
 На хостинг приложение не выложено, разрабатывалось и испытывалось локально.
 
 
 Требования к установке:
 
-1) Веб-приложение должно иметь домен thewall.avm
-Это обусловлено привязкой к Facebook Application для авторизации, в настройке которого указан адрес сайта:
+1) Веб-приложение должно иметь домен thewall.avm<br>
+Это обусловлено привязкой к Facebook Application для авторизации, в настройке которого указан адрес сайта:<br>
 http://thewall.avm/
 
 2) Настройки для апача в httpd.conf (обработка питона как CGI и вывод страниц в utf-8)
 
-DirectoryIndex index.py
-AddHandler cgi-script .py
+DirectoryIndex index.py<br>
+AddHandler cgi-script .py<br>
 
-AddDefaultCharset UTF-8
-SetEnv PYTHONIOENCODING utf8
+AddDefaultCharset UTF-8<br>
+SetEnv PYTHONIOENCODING utf8<br>
 
-3) Python находится здесь: C:/Python36/python.exe
+3) Python находится здесь: C:/Python36/python.exe<br>
 Была использована 32-битная версия.
 
 4) Дополнительные библиотеки:
 
-Пакет MySQLdb был скачан отсюда: https://pypi.python.org/pypi/mysqlclient
-Установка:
+* Пакет MySQLdb был скачан отсюда: https://pypi.python.org/pypi/mysqlclient
+Установка:<br>
 pip install mysqlclient-1.3.10-cp36-cp36m-win32.whl
-
-Пакет requests
+* Пакет requests<br>
 pip install requests
 
 
